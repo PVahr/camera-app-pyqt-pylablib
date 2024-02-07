@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CameraAppGUI</class>
+ <widget class="QMainWindow" name="CameraAppGUI">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1421</width>
+    <height>774</height>
+   </rect>
+  </property>
+  <property name="focusPolicy">
+   <enum>Qt::ClickFocus</enum>
+  </property>
+  <property name="windowTitle">
+   <string>Un giorno alla volta</string>
+  </property>
+  <property name="documentMode">
+   <bool>true</bool>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>true</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="focusPolicy">
+    <enum>Qt::ClickFocus</enum>
+   </property>
+   <property name="contextMenuPolicy">
+    <enum>Qt::PreventContextMenu</enum>
+   </property>
+   <widget class="QLabel" name="canvas">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>500</width>
+      <height>500</height>
+     </rect>
+    </property>
+    <property name="mouseTracking">
+     <bool>true</bool>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>2024_01_17_00000_16.15.15.362_im_s_exp0.1_gain2.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>0</y>
+      <width>429</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="camera_run_layout">
+     <item row="0" column="2">
+      <widget class="QPushButton" name="snapButton">
+       <property name="text">
+        <string>Snap</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QPushButton" name="startAcqui">
+       <property name="text">
+        <string>Start acq</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="4">
+      <widget class="QPushButton" name="clearPlotButton">
+       <property name="text">
+        <string>Clear plot</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QPushButton" name="grabButton">
+       <property name="text">
+        <string>Grab</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QPushButton" name="stopAcqui">
+       <property name="text">
+        <string>Stop acq</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QPushButton" name="setupAcqui">
+       <property name="text">
+        <string>Setup acq</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QPushButton" name="clearAcqui">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="text">
+        <string>Clear acq</string>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QPushButton" name="openCam">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="text">
+        <string>Open cam</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QPushButton" name="closeCam">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>Close cam</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="4">
+      <widget class="QPushButton" name="restartCameraThreadButton">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>Restart cam thread</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QGroupBox" name="camera_settings_group_box">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>120</y>
+      <width>551</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Camera settings</string>
+    </property>
+    <widget class="QWidget" name="gridLayoutWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>20</y>
+       <width>505</width>
+       <height>96</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="1">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Exposure time
+(s)</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QLineEdit" name="setNFramesToGrab">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>set N frames to 
+ grab when Grab</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLineEdit" name="setExposureEdit">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1" colspan="4">
+       <widget class="QPushButton" name="setNewCameraSettings">
+        <property name="text">
+         <string>Set new camera settings</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>gain
+(1 to 4096)</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QCheckBox" name="subtractBackgroundCheckbox">
+        <property name="text">
+         <string>Subtract
+background</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="4">
+       <widget class="QLineEdit" name="setGainEdit">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="4">
+       <widget class="QPushButton" name="selectBackgroundFileButton">
+        <property name="text">
+         <string>select background</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="roi_settings_group_box">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>260</y>
+      <width>571</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>ROI settings</string>
+    </property>
+    <widget class="QWidget" name="gridLayoutWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>-1</x>
+       <y>19</y>
+       <width>571</width>
+       <height>191</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="ROI_settings_layout">
+      <item row="3" column="6">
+       <widget class="QPushButton" name="setFrameMinMax">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Set frame
+min/max</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="3">
+       <widget class="QLineEdit" name="frameMinEdit">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="5">
+       <widget class="QLineEdit" name="frameMaxEdit">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="4">
+       <widget class="QLabel" name="label_11">
+        <property name="text">
+         <string>Frame max
+(Enter to set)</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QLabel" name="label_10">
+        <property name="text">
+         <string>Frame min
+(Enter to set)</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="4">
+       <widget class="QPushButton" name="binning8Button">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>8</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="4">
+       <widget class="QLabel" name="label_8">
+        <property name="text">
+         <string>Y center
+(Enter to set)</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="6">
+       <widget class="QPushButton" name="setNewRoiCenterButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Set new</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_9">
+        <property name="text">
+         <string>Frame rescaling
+(0 to 65535, 16 bit)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>ROI size</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QPushButton" name="setRoi256Button">
+        <property name="text">
+         <string>256*256</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QCheckBox" name="automaticFrameScalingCheckbox">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Auto</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="3">
+       <widget class="QLineEdit" name="roiCenterXEdit">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="binning2Button">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>2</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="4">
+       <widget class="QPushButton" name="setRoi128Button">
+        <property name="text">
+         <string>128*128</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QPushButton" name="binning1Button">
+        <property name="text">
+         <string>None</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QPushButton" name="setRoi512Button">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>512*512</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QPushButton" name="binning4Button">
+        <property name="text">
+         <string>4</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QPushButton" name="resetRoiButton">
+        <property name="text">
+         <string>1000*1000</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>ROI center</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QLabel" name="label_7">
+        <property name="text">
+         <string>X center
+(Enter to set)</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>Binning</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="5">
+       <widget class="QLineEdit" name="roiCenterYEdit">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QPushButton" name="resetRoiCenterButton">
+        <property name="text">
+         <string>Reset</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QCheckBox" name="addMouseLineButton">
+        <property name="text">
+         <string>add cross
+at mouse
+pos</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2">
+       <widget class="QCheckBox" name="addCursorsButton">
+        <property name="text">
+         <string>add x, y
+cursors</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="3">
+       <widget class="QLabel" name="label_13">
+        <property name="text">
+         <string>+- ... pixels
+horiz
+(Enter to set)</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="5">
+       <widget class="QLabel" name="label_14">
+        <property name="text">
+         <string>+- ... pixels
+vert
+(Enter to set)</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="4">
+       <widget class="QLineEdit" name="CursorHoriz">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="6">
+       <widget class="QLineEdit" name="CursorVert">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>530</y>
+      <width>571</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Saving settings</string>
+    </property>
+    <widget class="QWidget" name="gridLayoutWidget_4">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>30</y>
+       <width>571</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="2" column="0" colspan="6">
+       <widget class="QPushButton" name="dontPanickButton">
+        <property name="text">
+         <string>Panic! Save myself instead of the pictures!</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="5">
+       <widget class="QCheckBox" name="saveTiffExtension">
+        <property name="text">
+         <string>save .tiff</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="4">
+       <widget class="QCheckBox" name="savePngExtension">
+        <property name="text">
+         <string>save .png</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="saveWhileRunningCheckbox">
+        <property name="text">
+         <string>save while
+running</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QCheckBox" name="saveNpyExtension">
+        <property name="text">
+         <string>save .npy</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QCheckBox" name="saveWhileSnapOrGrabCheckbox">
+        <property name="text">
+         <string>save while
+snap, grab</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QCheckBox" name="saveAlsoRawFrame">
+        <property name="text">
+         <string>Save also raw
+(unrescaled) frame</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_12">
+        <property name="text">
+         <string>Make N avg
+then save
+(press Enter)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="SetupSaveDirectory">
+        <property name="text">
+         <string>Reset save folder</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="setMakeNAvgThenSave">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" colspan="6">
+       <widget class="QLabel" name="PanicLabel">
+        <property name="text">
+         <string>**AHHHHH** HELP</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="PlotWidget" name="plot_bottom" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>510</y>
+      <width>501</width>
+      <height>41</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="PlotWidget" name="plot_avg" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>560</y>
+      <width>501</width>
+      <height>141</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="PlotWidget" name="plot_right" native="true">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>0</y>
+      <width>51</width>
+      <height>501</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1421</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PlotWidget</class>
+   <extends>QWidget</extends>
+   <header>pyqtgraph</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
