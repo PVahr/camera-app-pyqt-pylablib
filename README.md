@@ -1,6 +1,7 @@
 # camera-app-pyqt-pylablib
 A program for scientific cameras supported by pylablib written in PyQt5 for Python.
-The specific program is implemented for Andor Luca cameras, but you can easily change it to any camera supported by pylablib ([list here](https://pylablib.readthedocs.io/en/latest/devices/cameras_root.html)) and, with a bit more work, possibly to any python-supported scientific camera
+The specific program is implemented for Andor Luca cameras, but you can easily change it to any camera supported by pylablib ([list here](https://pylablib.readthedocs.io/en/latest/devices/cameras_root.html)) and, with a bit more work, possibly to any python-supported scientific camera.
+Designed in Qt Designer with the aim of integrating it further in custom PyQt programs.
 
 # Features
   - livestream of frames at many ROI (size, center), gain, exposure time
@@ -42,8 +43,9 @@ This program works with Andor Luca, but a little tweaking should make it work wi
 
 You can start by changing the imports:
 
-`pll.par["devices/dlls/andor_sdk2"] = "C:\Program Files\Andor Driver Pack 2"
-from pylablib.devices import Andor`
+`pll.par["devices/dlls/andor_sdk2"] = "C:\Program Files\Andor Driver Pack 2"`
+
+`from pylablib.devices import Andor`
 
  and the definition of the `self.cam` variable in the `CameraHandler` class:
  
@@ -53,15 +55,14 @@ to match your camera.
 If some methods fail, go thorough the `CameraHandler` class and check if methods are missing or working differently.
 
 # Known bugs and limitations
-1) Speed and framerate
-The measured framerate is less the the given one. When resing the ROI to 512^2 and using some binning, this amounts in around 50 ms of delay for every frame, so quite acceptable.
+1) **Speed and framerate**
+The measured framerate is less the the given one. When resing the ROI to 512*512 and using some binning, this amounts in around 50 ms of delay for every frame, so quite acceptable.
 Is more noticeable  with bigger frames at full resolution.
-
 Can be in part due to the bandwidth limitation of the Andor Luca tested, in part due to the processing done in Python on the frames themselves.
 The processing is implemented via multithreading, but the multithreading of PyQt and Python in general does not allow to use different physical cores, resulting in an accumulation of times (the time to acquire the frame + to process it).
 At small roi and binning the framerate is fast enough (fastest doable with Luca is 50 ms, after which the GUI start to slow down coniderably).
 
-2) Sending frames to another PyQt5 program
+2) **Sending frames to another PyQt5 program**
 Still not sure about which pyqSignal to use and where. The possible signals are listed above, but there is a bit of confusion.
 
 # Code structure
