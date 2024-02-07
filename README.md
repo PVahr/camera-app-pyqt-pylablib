@@ -65,6 +65,8 @@ At small roi and binning the framerate is fast enough (fastest doable with Luca 
 2) **Sending frames to another PyQt5 program**
 Still not sure about which pyqSignal to use and where. The possible signals are listed above, but there is a bit of confusion.
 
+3) **Closing the program**
+At the moment it works without trowing any error, but when trying to re-open it (from another program), it just does not work. Why? Mmhh some fishy stuff going on with threads
 # Code structure
 
 There are 4 classes: the `CameraHandler` class, that wraps pylablib functions; the `CameraThread` class, a `QThread` that keeps on getting the frames from the camera; the `ProcessingThread` class, another QThread, that gets the raw frames from the CameraThread and process them, either for plotting or for saving; the `CameraApp` class that inherits from QMainWindow, is the actualy GUI and where all the other classes are defined.
