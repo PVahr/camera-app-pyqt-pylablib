@@ -8,9 +8,17 @@ The specific program is implemented for Andor Luca cameras, but you can easily c
   - mouse-based pointer on the frame with additional cursors
   - plots with image integrals and image average in time
   - easily embeed it into your PyQt program for your own experiment
-  - a panic button for those really bad days
+  - a panic button for those really bad, bad days
+
+[image](img/program_screenshot_darktheme.PNG)
 
 ## Usage
+
+#### packages
+- install PyQt5 using pip to the latest version. Versions < 5.12 do not support 16 bit Grayscale format for qimage. Atm the one via conda is < 5.12
+- PIL (pillow) for conversion to png, tiff and image manipulation
+- pylablib, of course
+- numpy, datetime, re, sys, os, time
 
 ## Use with a different camera
 
@@ -18,4 +26,3 @@ The specific program is implemented for Andor Luca cameras, but you can easily c
 
 ## Known bugs and limitations
 
-![Screenshot](img/program_screenshot.PNG)![image](img/program_screenshot_darktheme.PNG?raw)
