@@ -1108,7 +1108,7 @@ class CameraApp(QMainWindow, Ui_CameraAppGUI):
     def onDontPanickButton(self):
         motivational_sentences = {
             1: "If u feel bad, the anatomic department is one stone's trow away. Donate your body to science.",
-            2: "Every day may not be good, but there's something good in every day. Look for it?",
+            2: "There are more gifs of cats then problems in your life, you will be fine",
             4: "Who is the manager of yourself? Is the position vacant? Can people apply via LinkedIn?",
             5: "The only way to do great work is to love what you do. Or to be held in it by your visa.",
             6: "You are capable of amazing things. Like doing an unscheduled laundry in Switzerland.",
@@ -1117,19 +1117,30 @@ class CameraApp(QMainWindow, Ui_CameraAppGUI):
             3: "Your code may have bugs, but so does the universe. You're in good company.",
             9: "You're cooler than an ion! ...",
             10: "... and more repulsive than an ion crystal!",
-            11:"In the grand scheme of the universe, your thesis defense is just a small blip. And nobody will read it btw.",
+            11: "In the grand scheme of the universe, your thesis defense is just a small blip. And nobody will read it btw.",
             12: "Every failed experiment is one step closer to discovering something no one else has. Shuttering you to pieces.",
             13: "Life is an optimization problem. If you feel stuck in your local minima, tunnel the f4ck out!",
             14: "Your coffee-to-code ratio might be 1:1, but at least you're caffeinated and confused.",
-            15: "Your data might be noisy, but at least it's not as loud as your inner imposter syndrome.",
+            15: "The sunken cost fallacy is that thing between you and a fulfilling life.",
             16: "Resize the ROI of your life to a smaller scope, and save periodically in the appropriate format.",
-            17: "Ehi! Priorities change, it's okay! Anyway, it's getting late"
+            17: "Ehi! Priorities change, it's okay! Anyway, it's getting late (quote)",
+            18: "All these efforts to produce a pdf only a handfull of folks will read?! Relax, it's just a pdf",
+            19: "Mindfulness, breathwork meditation, cognitive-behavioural therapy are all powerless against that tab indentation error.",
+            20: "When is the last time you felt in the right place at the right time?",
+            21: "One day at the time, one step at the time. And a vaffanculo in the right moment. Poetry.",
+            22: "You just lost connection with the camera. And regain connection with yourself?",
+            23: "You can set the camera gain, but what do you gain?",
+            24: "Panic attack in 3..., 2...., 1.... BOOOM! Take some time off, you will see, it will help",
+            25: "What is the elephant in the lab for you?",
+            26: "Around half of graduate students experience anxiety and depression. And it is unlikely your group is an outlier.",
+            27: "Challenge: take a selfie of the people in the lab, smiling, and send it to the group chat",
+            28: "Doing a PhD without a therapist is just not a thing anymore nowadays. Update yourself, be trendy, get a therapist!"
         }
         sentence = motivational_sentences[np.random.randint(1, len(motivational_sentences) + 1)]
         self.PanicLabel.setText(sentence)
         # try:
         # getCat()
-        import urllib.request
+        # import urllib.request
         # getCat(self.processingThread.date_directory, 'my_cat', 'png')
         # print('Cat image successfullt imported')
             # self.updateFrameOnGui()
