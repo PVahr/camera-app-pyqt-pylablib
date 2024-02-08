@@ -22,6 +22,7 @@ Designed in Qt Designer with the aim of integrating it further in custom PyQt pr
     - pylablib, of course
     - numpy, datetime, re, sys, os, time
     - qdarktheme if you want the dark theme
+    - tested with Python 3.11
 
 2) Run program as main
 or else, embeed it into your own PyQt5 program, like
