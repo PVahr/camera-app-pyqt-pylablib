@@ -1125,7 +1125,7 @@ class CameraApp(QMainWindow, Ui_CameraAppGUI):
             16: "Resize the ROI of your life to a smaller scope, and save periodically in the appropriate format.",
             17: "Ehi! Priorities change, it's okay! Anyway, it's getting late (quote)",
             18: "All these efforts to produce a pdf only a handfull of folks will read?! Relax, it's just a pdf",
-            19: "Mindfulness, breathwork meditation, cognitive-behavioural therapy are all powerless against that tab indentation error.",
+            19: "Mindfulness, breathwork meditation, therapy are all powerless against that tab indentation error.",
             20: "When is the last time you felt in the right place at the right time?",
             21: "One day at the time, one step at the time. And a vaffanculo in the right moment. Poetry.",
             22: "You just lost connection with the camera. And regain connection with yourself?",
