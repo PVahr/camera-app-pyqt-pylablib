@@ -17,7 +17,7 @@ Designed in Qt Designer with the aim of integrating it further in custom PyQt pr
 
 # Usage
 1) Install packages (check or use the requirements.txt file directly):
-    - install PyQt5 using pip to the latest version. Versions < 5.12 do not support 16 bit Grayscale format for qimage. Atm the one via conda is < 5.12, so just use 
+    - install PyQt5 using pip to the latest version. Versions < 5.12 do not support 16 bit Grayscale format for qimage. At the moment the one via conda is < 5.12, so don't use conda, use pip
     - PIL (pillow) for conversion to png, tiff and image manipulation
     - pylablib, of course
     - numpy, datetime, re, sys, os, time
