@@ -44,7 +44,7 @@ class CameraHandler:
         self.open_camera()
         self.cam.set_frame_format('chunks')
         self.cam.set_frame_period(frame_period)
-        self.cam.set_image_indexing('rct')
+        self.cam.set_image_indexing('rcb')
         self.exposure_time = exposure_time
         self.set_exposure_time(self.exposure_time)
         self.gain = gain
