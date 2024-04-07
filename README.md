@@ -5,7 +5,7 @@ Designed in Qt Designer with the aim of integrating it further in custom PyQt pr
 
 # Features
   - livestream of frames at many ROI (size, center), gain, exposure time
-  - directly save (png, tiff, npy) the livestream with automatic naming of folder and files via timestamp and settings
+  - directly save (png, tiff, npy) the livestream with automatic naming of folder and files with a precise timestamp and current settings
   - optionally subtract a background image
   - mouse-based pointer on the frame with additional cursors
   - plots with image integrals and image average in time
